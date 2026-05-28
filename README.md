@@ -1,112 +1,158 @@
-# Customer Churn Prediction
+# Customer Churn Analysis & Prediction
 
-Dự án Machine Learning dự đoán khả năng khách hàng rời bỏ dịch vụ (Customer Churn Prediction) bằng Python, Scikit-learn và Flask.
-
----
-
-# Tổng quan dự án
-
-Dự án tập trung phân tích hành vi khách hàng nhằm:
-
-- Xác định nhóm khách hàng có nguy cơ rời bỏ dịch vụ
-- Phân tích các yếu tố ảnh hưởng đến churn
-- Xây dựng mô hình Machine Learning dự đoán churn
-- Hỗ trợ doanh nghiệp cải thiện tỷ lệ giữ chân khách hàng
-
-Dự án bao gồm:
-
-- Data Cleaning
-- Exploratory Data Analysis (EDA)
-- Feature Engineering
-- Machine Learning
-- Model Evaluation
-- Flask Web Application
+Customer Churn Analysis and Prediction project using Python, Machine Learning, and Tableau to identify customer behaviors related to churn and support customer retention strategies.
 
 ---
 
-# Công nghệ sử dụng
+# Project Overview
+
+This project focuses on analyzing customer behavior and predicting the likelihood of customer churn in a telecom service business.
+
+The objectives of the project are:
+
+- Analyze customer churn patterns
+- Identify important factors affecting churn behavior
+- Build and evaluate Machine Learning models
+- Visualize business insights through an interactive Tableau dashboard
+- Support data-driven customer retention decisions
+
+---
+
+# Technologies Used
 
 - Python
 - Pandas
 - NumPy
 - Matplotlib
-- Seaborn
 - Scikit-learn
 - Flask
+- Tableau Public
 - Jupyter Notebook
 
 ---
 
-# Dataset
+# Project Workflow
 
-Dataset chứa thông tin khách hàng như:
+## 1. Data Cleaning
 
-- Giới tính
-- Loại hợp đồng
-- Internet service
+- Handled missing values
+- Removed inconsistent records
+- Converted data types
+- Prepared dataset for analysis
+
+## 2. Exploratory Data Analysis (EDA)
+
+Analyzed customer behavior patterns related to:
+
+- Contract type
 - Monthly charges
-- Total charges
 - Tenure
-- Customer status
+- Referrals
+- Internet services
 
-Biến mục tiêu:
+## 3. Feature Engineering
 
-- Customer Status (Stayed / Churned)
+- Encoded categorical variables
+- Selected important features
+- Created ML-ready dataset
 
----
+## 4. Machine Learning
 
-# Phân tích dữ liệu (EDA)
-
-## Phân bố trạng thái khách hàng
-
-![Customer Status Distribution](images/churn_distribution.png)
-
----
-
-## Mối quan hệ giữa loại hợp đồng và churn
-
-![Contract vs Churn](images/contract_vs_churn.png)
-
----
-
-## Monthly Charges vs Churn
-
-![Monthly Charges vs Churn](images/monthly_charge_vs_churn.png)
-
----
-
-## Feature Importance
-
-![Feature Importance](images/feature_importance.png)
-
----
-
-# Machine Learning Models
-
-Các mô hình được thử nghiệm:
+Trained and evaluated multiple classification models:
 
 - Logistic Regression
 - Random Forest
 - Gradient Boosting
 
-Mô hình cuối cùng được chọn:
+Final selected model:
 
 - Gradient Boosting Classifier
 
+## 5. Dashboard Visualization
+
+Built an interactive Tableau dashboard to visualize:
+
+- Churn rate
+- Contract type distribution
+- Monthly charges vs churn
+- Customer tenure behavior
+- Referral impact on churn
+
 ---
 
-# Kết quả mô hình
+# Dataset
+
+The dataset includes customer information such as:
+
+- Gender
+- Contract Type
+- Internet Service
+- Monthly Charges
+- Total Charges
+- Tenure
+- Referrals
+- Customer Status
+
+Target variable:
+
+- Customer Status (Stayed / Churned)
+
+---
+
+# Tableau Dashboard
+
+## Customer Churn Dashboard
+
+![Dashboard](images/dashboard.png)
+
+---
+
+# Exploratory Data Analysis
+
+## Customer Churn by Contract Type
+
+![Contract vs Churn](images/contract_vs_churn.png)
+
+---
+
+## Customer Tenure vs Churn
+
+![Tenure vs Churn](images/tenure_vs_churn.png)
+
+---
+
+## Customer Churn by Monthly Charges
+
+![Monthly Charges vs Churn](images/monthly_charge_vs_churn.png)
+
+---
+
+## Customer Churn by Referrals
+
+![Referrals vs Churn](images/referrals_vs_churn.png)
+
+---
+
+# Feature Importance
+
+The most influential features affecting churn prediction include:
+
+- Number of Referrals
+- Contract Type
+- Tenure in Months
+- Monthly Charges
+- Age
+
+![Feature Importance](images/feature_importance.png)
+
+---
+
+# Model Performance
 
 | Model | Accuracy | Precision | Recall | F1-score |
 |---|---|---|---|---|
 | GradientBoost_Full | 0.852 | 0.779 | 0.620 | 0.690 |
 | GradientBoost_Top20 | 0.855 | 0.779 | 0.633 | 0.699 |
-
----
-
-## So sánh hiệu suất mô hình
-
-![Model Comparison](images/model_comparison.png)
 
 ---
 
@@ -116,7 +162,18 @@ Mô hình cuối cùng được chọn:
 
 ---
 
-# Cấu trúc project
+# Business Insights
+
+Key findings from the analysis:
+
+- Customers with Month-to-Month contracts showed significantly higher churn rates.
+- Customers with longer tenure were more likely to stay.
+- Higher monthly charges were associated with increased churn probability.
+- Customers with more referrals tended to have stronger retention behavior.
+
+---
+
+# Project Structure
 
 ```text
 churn/
@@ -128,3 +185,13 @@ churn/
 ├── README.md
 ├── requirements.txt
 └── .gitignore
+```
+
+---
+
+# Future Improvements
+
+- Deploy the model using Flask web application
+- Add real-time prediction interface
+- Improve dashboard interactivity
+- Experiment with additional ML models
