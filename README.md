@@ -8,26 +8,27 @@ Customer Churn Analysis and Prediction project using Python, Machine Learning, a
 
 This project focuses on analyzing customer behavior and predicting the likelihood of customer churn in a telecom service business.
 
-The objectives of the project are:
+The main objectives of this project are:
 
-- Analyze customer churn patterns
-- Identify important factors affecting churn behavior
-- Build and evaluate Machine Learning models
-- Visualize business insights through an interactive Tableau dashboard
-- Support data-driven customer retention decisions
+* Analyze customer churn patterns
+* Identify important factors affecting churn behavior
+* Build and evaluate Machine Learning models
+* Visualize business insights through an interactive Tableau dashboard
+* Support data-driven customer retention decisions
 
 ---
 
 # Technologies Used
 
-- Python
-- Pandas
-- NumPy
-- Matplotlib
-- Scikit-learn
-- Flask
-- Tableau Public
-- Jupyter Notebook
+* Python
+* Pandas
+* NumPy
+* Matplotlib
+* Seaborn
+* Scikit-learn
+* Flask
+* Tableau Public
+* Jupyter Notebook
 
 ---
 
@@ -35,48 +36,47 @@ The objectives of the project are:
 
 ## 1. Data Cleaning
 
-- Handled missing values
-- Removed inconsistent records
-- Converted data types
-- Prepared dataset for analysis
+* Handled missing values
+* Removed inconsistent records
+* Converted data types
+* Prepared dataset for analysis
 
 ## 2. Exploratory Data Analysis (EDA)
 
 Analyzed customer behavior patterns related to:
 
-- Contract type
-- Monthly charges
-- Tenure
-- Referrals
-- Internet services
+* Contract type
+* Monthly charges
+* Customer tenure
+* Customer status distribution
 
 ## 3. Feature Engineering
 
-- Encoded categorical variables
-- Selected important features
-- Created ML-ready dataset
+* Encoded categorical variables
+* Selected important features
+* Created ML-ready dataset
 
 ## 4. Machine Learning
 
 Trained and evaluated multiple classification models:
 
-- Logistic Regression
-- Random Forest
-- Gradient Boosting
+* Logistic Regression
+* Random Forest
+* Gradient Boosting
 
 Final selected model:
 
-- Gradient Boosting Classifier
+* Gradient Boosting Classifier
 
 ## 5. Dashboard Visualization
 
 Built an interactive Tableau dashboard to visualize:
 
-- Churn rate
-- Contract type distribution
-- Monthly charges vs churn
-- Customer tenure behavior
-- Referral impact on churn
+* Churn rate
+* Contract type distribution
+* Monthly charges vs churn
+* Customer tenure behavior
+* Referral impact on churn
 
 ---
 
@@ -84,18 +84,18 @@ Built an interactive Tableau dashboard to visualize:
 
 The dataset includes customer information such as:
 
-- Gender
-- Contract Type
-- Internet Service
-- Monthly Charges
-- Total Charges
-- Tenure
-- Referrals
-- Customer Status
+* Gender
+* Contract Type
+* Internet Service
+* Monthly Charges
+* Total Charges
+* Tenure
+* Referrals
+* Customer Status
 
 Target variable:
 
-- Customer Status (Stayed / Churned)
+* Customer Status (Stayed / Churned)
 
 ---
 
@@ -107,7 +107,13 @@ Target variable:
 
 ---
 
-# Exploratory Data Analysis
+# Exploratory Data Analysis (EDA)
+
+## Customer Status Distribution
+
+![Customer Status Distribution](images/churn_distribution.png)
+
+---
 
 ## Customer Churn by Contract Type
 
@@ -115,21 +121,9 @@ Target variable:
 
 ---
 
-## Customer Tenure vs Churn
-
-![Tenure vs Churn](images/tenure_vs_churn.png)
-
----
-
-## Customer Churn by Monthly Charges
+## Monthly Charges vs Customer Status
 
 ![Monthly Charges vs Churn](images/monthly_charge_vs_churn.png)
-
----
-
-## Customer Churn by Referrals
-
-![Referrals vs Churn](images/referrals_vs_churn.png)
 
 ---
 
@@ -137,11 +131,11 @@ Target variable:
 
 The most influential features affecting churn prediction include:
 
-- Number of Referrals
-- Contract Type
-- Tenure in Months
-- Monthly Charges
-- Age
+* Number of Referrals
+* Contract Type
+* Tenure in Months
+* Monthly Charges
+* Age
 
 ![Feature Importance](images/feature_importance.png)
 
@@ -149,10 +143,16 @@ The most influential features affecting churn prediction include:
 
 # Model Performance
 
-| Model | Accuracy | Precision | Recall | F1-score |
-|---|---|---|---|---|
-| GradientBoost_Full | 0.852 | 0.779 | 0.620 | 0.690 |
-| GradientBoost_Top20 | 0.855 | 0.779 | 0.633 | 0.699 |
+| Model               | Accuracy | Precision | Recall | F1-score |
+| ------------------- | -------- | --------- | ------ | -------- |
+| GradientBoost_Full  | 0.852    | 0.779     | 0.620  | 0.690    |
+| GradientBoost_Top20 | 0.855    | 0.779     | 0.633  | 0.699    |
+
+---
+
+## Model Comparison
+
+![Model Comparison](images/model_comparison.png)
 
 ---
 
@@ -166,17 +166,17 @@ The most influential features affecting churn prediction include:
 
 Key findings from the analysis:
 
-- Customers with Month-to-Month contracts showed significantly higher churn rates.
-- Customers with longer tenure were more likely to stay.
-- Higher monthly charges were associated with increased churn probability.
-- Customers with more referrals tended to have stronger retention behavior.
+* Customers with Month-to-Month contracts showed significantly higher churn rates.
+* Customers with longer tenure were more likely to stay.
+* Higher monthly charges were associated with increased churn probability.
+* Customers with more referrals tended to have stronger retention behavior.
 
 ---
 
 # Project Structure
 
 ```text
-churn/
+ml-customer-churn-analysis/
 ├── app/
 ├── data/
 ├── images/
@@ -191,7 +191,7 @@ churn/
 
 # Future Improvements
 
-- Deploy the model using Flask web application
-- Add real-time prediction interface
-- Improve dashboard interactivity
-- Experiment with additional ML models
+* Deploy the model using Flask web application
+* Add real-time prediction interface
+* Improve dashboard interactivity
+* Experiment with additional Machine Learning models
